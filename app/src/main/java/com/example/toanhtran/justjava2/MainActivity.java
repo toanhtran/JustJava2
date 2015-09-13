@@ -31,15 +31,17 @@ public class MainActivity extends ActionBarActivity {
      * This method is called when the plus button is clicked.
      */
     public void increment(View view) {
-        int quantityIncrement = 3;
-        display(quantityIncrement);
+        int quantity = 2;
+        quantity = quantity + 1;
+        display(quantity);
     }
     /**
      * This method is called when the minus button is clicked.
      */
     public void decrement(View view) {
-        int quantityDecrement = 1;
-        display(quantityDecrement);
+        int quantity = 2;
+        quantity = quantity - 1;
+        display(quantity);
     }
 
     /**
