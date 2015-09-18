@@ -22,35 +22,45 @@ public class MainActivity extends ActionBarActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int price = quantity * 5;
+        int price = calculatePrice();
         String priceMessage = "Total: $" + price;
-        priceMessage = priceMessage + " \nThank You! Have a wonderful day!";
+        priceMessage = priceMessage + " \nThank You!\n Have a wonderful day!";
         displayMessage(priceMessage);
+        displayPrice(price);
     }
+
+    /**
+     * Calculates the price of the order.
+     * @return price
+     */
+    private int calculatePrice() {
+        int price = quantity * 5;
+        return price;
+    }
+
     /**
      * This method is called when the plus button is clicked.
      */
     public void increment(View view) {
         quantity = quantity + 1;
-        display(quantity);
+        displayQuantity(quantity);
     }
     /**
      * This method is called when the minus button is clicked.
      */
     public void decrement(View view) {
         quantity = quantity - 1;
-        display(quantity);
+        displayQuantity(quantity);
+
     }
 
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
+    private void displayQuantity(int number) {
         TextView quantityTextView = (TextView) findViewById(
                 R.id.quantity_text_view);
         quantityTextView.setText("" + number);
-
-
 
     }
     /**
