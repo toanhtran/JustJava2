@@ -23,10 +23,7 @@ public class MainActivity extends ActionBarActivity {
      */
     public void submitOrder(View view) {
         int price = calculatePrice();
-        String priceMessage = "Total: $" + price;
-        priceMessage = priceMessage + " \nThank You!\n Have a wonderful day!";
-        displayMessage(priceMessage);
-        displayPrice(price);
+        displayMessage(createOrderSummary(price));
     }
 
     /**
@@ -34,8 +31,20 @@ public class MainActivity extends ActionBarActivity {
      * @return price
      */
     private int calculatePrice() {
-        int price = quantity * 5;
-        return price;
+        return quantity * 5;
+    }
+
+    /**
+     * This method creates summary order
+     * @param price of the order
+     * @return text summary
+     */
+    private String createOrderSummary(int price){
+        String priceMessage = "Name: Kaptain Kunal";
+        priceMessage += "\nQuantity: " + quantity;
+        priceMessage += "\nTotal: $" + price;
+        priceMessage += " \nThank You!";
+        return priceMessage;
     }
 
     /**
@@ -77,5 +86,11 @@ public class MainActivity extends ActionBarActivity {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
     }
+
+    /**
+     *
+     * @param priceOfOrder
+     * @return summary of name, quantity, total, and thank you msg
+     */
 
 }
