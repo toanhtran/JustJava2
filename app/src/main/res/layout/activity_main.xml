@@ -29,9 +29,15 @@
             android:onClick="onCheckedClicked"
             android:paddingLeft="24dp"
             android:text="Whipped Cream"
-            android:textAppearance="?android:textAppearanceMedium"
             android:textSize="16sp" />
-        
+        <CheckBox
+            android:id="@+id/chocolate_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckedClicked"
+            android:paddingLeft="24dp"
+            android:text="Chocolate"
+            android:textSize="16sp" />
 
 
         <TextView
