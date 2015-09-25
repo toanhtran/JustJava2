@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -25,14 +26,19 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        EditText nameField = (EditText) findViewById(R.id.name_field);
+        String name = nameField.getText().toString();
+
+        //Figure out if user wants whipped cream topping
         CheckBox whippedCreamCheckBox = (CheckBox)findViewById(R.id.whipped_cream_checkbox);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
-        Log.v("MainActivity", "Has whipped cream: " + hasWhippedCream);
+
+        //Figure out if user wants chocolate topping
         CheckBox chocolateCheckBox = (CheckBox)findViewById(R.id.chocolate_checkbox);
         boolean hasChocolate = chocolateCheckBox.isChecked();
-        Log.v("MainActivity", "Has chocolate: " + hasChocolate);
+
         int price = calculatePrice();
-        String priceMessage = createOrderSummary(price,boolean hasWhippedCream);
+        String priceMessage = createOrderSummary(name, price, hasWhippedCream, hasChocolate);
         displayMessage(priceMessage);
 
     }
@@ -47,13 +53,14 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method creates summary order
+     * @param name of the customer
      * @param addWhippedCream  is whether or not the user wants whipped cream
      * @param addChocolate is whether user wants chocolate toppping added
      * @param price of the order
      * @return text summary
      */
-    private String createOrderSummary(int price, boolean addWhippedCream, boolean addChocolate){
-        String priceMessage = "Name: Kaptain Kunal";
+    private String createOrderSummary(String name,int price, boolean addWhippedCream, boolean addChocolate){
+        String priceMessage = "Name: " + name;
         priceMessage += "\nAdd whipped cream? " + addWhippedCream;
         priceMessage += "\nAdd chocolate? " + addChocolate;
         priceMessage += "\nQuantity: " + quantity;
