@@ -1,9 +1,7 @@
-
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -22,21 +20,16 @@
             android:hint="Name"
             android:inputType="text" />
 
-
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Toppings"
-            android:textAllCaps="true" />
+            style="@style/HeaderTextStyle"
+            android:text="toppings" />
 
         <CheckBox
             android:id="@+id/whipped_cream_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="24dp"
-            android:text="Whipped cream"
+            android:text="Whipped Cream"
             android:textSize="16sp" />
 
         <CheckBox
@@ -48,12 +41,8 @@
             android:textSize="16sp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Quantity"
-            android:textAllCaps="true" />
+            style="@style/HeaderTextStyle"
+            android:text="quantity" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -72,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
-                android:text="2"
+                android:text="0"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
@@ -89,7 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:onClick="submitOrder"
-            android:text="Order" />
+            android:text="order" />
 
     </LinearLayout>
 </ScrollView>
